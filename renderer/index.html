@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI帮找产品销售线索</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- 页面 1：大模型配置页 -->
+  <section id="page-config" class="page active">
+    <div class="config-container">
+      <div class="app-header">
+        <h1>AI帮找产品销售线索</h1>
+        <p class="subtitle">外贸线索智能发现</p>
+      </div>
+
+      <div class="model-tabs">
+        <button class="tab-btn active" data-model="deepseek">DeepSeek</button>
+        <button class="tab-btn" data-model="minimax">MiniMax</button>
+        <button class="tab-btn" data-model="kimi">Kimi</button>
+        <button class="tab-btn" data-model="qwen">Qwen</button>
+      </div>
+
+      <div class="config-card">
+        <div class="form-group">
+          <label>API Key</label>
+          <div class="input-with-icon">
+            <input type="password" id="api-key" placeholder="请输入 API Key">
+            <button class="toggle-pwd" id="toggle-pwd" title="显示/隐藏">👁</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Base URL</label>
+          <input type="text" id="base-url" placeholder="API Base URL">
+        </div>
+        <div class="form-group">
+          <label>Model 名称</label>
+          <input type="text" id="model-name" placeholder="模型名称">
+        </div>
+        <button class="btn btn-secondary" id="btn-test">测试连接</button>
+        <div id="test-result" class="test-result"></div>
+      </div>
+
+      <div class="tips-card">
+        <p class="tips-title">💡 使用提示</p>
+        <p>建议先充值 <strong>5-10 元</strong>体验</p>
+        <div class="recharge-links">
+          <a href="https://platform.deepseek.com" target="_blank">DeepSeek 充值</a>
+          <a href="https://platform.minimax.chat" target="_blank">MiniMax 充值</a>
+          <a href="https://platform.moonshot.cn" target="_blank">Kimi 充值</a>
+          <a href="https://dashscope.console.aliyun.com" target="_blank">Qwen 充值</a>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-large" id="btn-confirm-config" disabled>确认并继续</button>
+    </div>
+  </section>
+
+  <!-- 页面 2：打赏页 -->
+  <section id="page-donation" class="page">
+    <div class="donation-container">
+      <div class="app-header">
+        <h1>AI帮找产品销售线索</h1>
+        <p class="subtitle">基础配置已完成！</p>
+      </div>
+
+      <div class="donation-card">
+        <div class="donation-icon">🎁</div>
+        <h2>感谢使用本工具</h2>
+        <p class="donation-desc">
+          本工具完全免费，旨在帮助外贸中小企业高效发现销售线索。<br>
+          如果您觉得有用，欢迎通过下方二维码随意打赏支持开发者。
+        </p>
+        <p class="donation-note">
+          <strong>* 非必要步骤，可跳过 *</strong>
+        </p>
+        
+        <div class="qrcode-wrapper">
+          <img src="qcoder.jpg" alt="收款二维码" class="qrcode-img">
+          <p class="qrcode-hint">微信 / 支付宝扫码打赏</p>
+        </div>
+
+        <div class="donation-actions">
+          <button class="btn btn-secondary" id="btn-skip-donation">跳过打赏</button>
+          <button class="btn btn-primary" id="btn-proceed-after-donation">进入主界面</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页面 3：产品信息输入页 -->
+  <section id="page-product" class="page">
+    <div class="product-container">
+      <div class="page-header">
+        <h2>输入产品信息</h2>
+        <p class="model-badge" id="current-model">当前模型：未配置</p>
+      </div>
+
+      <div class="product-layout">
+        <div class="input-card">
+          <div class="form-group">
+            <label>产品名称 <span class="required">*</span></label>
+            <input type="text" id="product-name" placeholder="如：工业级 3D 打印机">
+          </div>
+          <div class="form-group">
+            <label>产品技术特点</label>
+            <textarea id="product-features" rows="3" placeholder="如：高精度、快速成型、支持多种材料"></textarea>
+          </div>
+          <div class="form-group">
+            <label>产品应用场景</label>
+            <textarea id="product-scenarios" rows="3" placeholder="如：汽车制造、医疗器械、航空航天"></textarea>
+          </div>
+          <div class="form-group">
+            <label>目标市场/国家 <span class="optional">（选填）</span></label>
+            <input type="text" id="product-market" placeholder="如：美国、德国、东南亚">
+          </div>
+        </div>
+
+        <div class="preview-card">
+          <h3>搜索关键词预览</h3>
+          <div class="preview-content" id="search-preview">
+            <p class="preview-placeholder">输入产品信息后，此处将显示搜索关键词预览...</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-large" id="btn-search">寻找销售线索</button>
+      <p class="back-link" id="link-back-config">← 返回修改模型配置</p>
+    </div>
+  </section>
+
+  <!-- 页面 4：报告页 -->
+  <section id="page-report" class="page">
+    <div class="report-container">
+      <div class="report-header">
+        <h2>销售线索报告</h2>
+        <div class="report-meta" id="report-meta"></div>
+      </div>
+
+      <div id="loading-section" class="loading-section" style="display:none;">
+        <div class="spinner"></div>
+        <p class="loading-text">AI 正在全网搜索销售线索，请稍候...</p>
+        <p class="loading-hint" id="loading-hint">正在分析产品信息...</p>
+      </div>
+
+      <div id="result-section" class="result-section" style="display:none;">
+        <div class="table-wrapper">
+          <table id="leads-table">
+            <thead>
+              <tr>
+                <th>联系人名称</th>
+                <th>联系人电话</th>
+                <th>联系人邮箱</th>
+                <th>联系人诉求</th>
+                <th>联系人国家</th>
+              </tr>
+            </thead>
+            <tbody id="leads-tbody">
+            </tbody>
+          </table>
+        </div>
+        <div class="empty-state" id="empty-state" style="display:none;">
+          <p>暂无数据</p>
+        </div>
+      </div>
+
+      <div class="report-actions" id="report-actions" style="display:none;">
+        <button class="btn btn-primary" id="btn-export-excel">导出 Excel</button>
+        <button class="btn btn-primary" id="btn-export-pdf">导出 PDF</button>
+        <button class="btn btn-secondary" id="btn-research">重新搜索</button>
+        <p class="back-link" id="link-back-product">← 修改产品信息</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
