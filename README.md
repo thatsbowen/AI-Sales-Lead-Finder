@@ -1,14 +1,3 @@
----
-AIGC:
-    Label: "1"
-    ContentProducer: 001191440300708461136T1XGW3
-    ProduceID: f927da7644cca8378603e444f25fbc2f_b1a53075654411f1aaba5254006c9bbf
-    ReservedCode1: Zgdrtu8hbE84YO5t/MN4vFnlV2WYFLN3GGJiLubFXMWCNacIdr8QRPD0KrIbu10YXxVXoMf4OkMNFUbInwD57comqvdCCutdPTQtYIE11/EpVjlx/JWaxS1AyKzKt72S5PNNvXK2OWD33+p97LilSv/RHrtentVHuSTkyNY0zT1cQZWb2ioksnJ+nHU=
-    ContentPropagator: 001191440300708461136T1XGW3
-    PropagateID: f927da7644cca8378603e444f25fbc2f_b1a53075654411f1aaba5254006c9bbf
-    ReservedCode2: Zgdrtu8hbE84YO5t/MN4vFnlV2WYFLN3GGJiLubFXMWCNacIdr8QRPD0KrIbu10YXxVXoMf4OkMNFUbInwD57comqvdCCutdPTQtYIE11/EpVjlx/JWaxS1AyKzKt72S5PNNvXK2OWD33+p97LilSv/RHrtentVHuSTkyNY0zT1cQZWb2ioksnJ+nHU=
----
-
 <h1 align="center">AI帮找产品销售线索</h1>
 <h3 align="center">AI-Powered Sales Lead Discovery for Foreign Trade SMEs</h3>
 
@@ -214,4 +203,3 @@ MIT © 2026 — Free for personal and commercial use.
   <br>
   <sub>为外贸人而建。如果这个工具帮你找到了一个客户，它已经值回票价。</sub>
 </p>
-*（内容由AI生成，仅供参考）*
