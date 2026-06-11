@@ -1,3 +1,14 @@
+---
+AIGC:
+    Label: "1"
+    ContentProducer: 001191440300708461136T1XGW3
+    ProduceID: f927da7644cca8378603e444f25fbc2f_b1a53075654411f1aaba5254006c9bbf
+    ReservedCode1: Zgdrtu8hbE84YO5t/MN4vFnlV2WYFLN3GGJiLubFXMWCNacIdr8QRPD0KrIbu10YXxVXoMf4OkMNFUbInwD57comqvdCCutdPTQtYIE11/EpVjlx/JWaxS1AyKzKt72S5PNNvXK2OWD33+p97LilSv/RHrtentVHuSTkyNY0zT1cQZWb2ioksnJ+nHU=
+    ContentPropagator: 001191440300708461136T1XGW3
+    PropagateID: f927da7644cca8378603e444f25fbc2f_b1a53075654411f1aaba5254006c9bbf
+    ReservedCode2: Zgdrtu8hbE84YO5t/MN4vFnlV2WYFLN3GGJiLubFXMWCNacIdr8QRPD0KrIbu10YXxVXoMf4OkMNFUbInwD57comqvdCCutdPTQtYIE11/EpVjlx/JWaxS1AyKzKt72S5PNNvXK2OWD33+p97LilSv/RHrtentVHuSTkyNY0zT1cQZWb2ioksnJ+nHU=
+---
+
 <h1 align="center">AI帮找产品销售线索</h1>
 <h3 align="center">AI-Powered Sales Lead Discovery for Foreign Trade SMEs</h3>
 
@@ -5,7 +16,7 @@
   <img src="https://img.shields.io/badge/platform-Windows-blue?style=flat-square" alt="Platform">
   <img src="https://img.shields.io/badge/framework-Electron-47848F?style=flat-square&logo=electron" alt="Electron">
   <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="License">
-  <img src="https://img.shields.io/badge/version-1.0.0-brightgreen?style=flat-square" alt="Version">
+  <img src="https://img.shields.io/badge/version-1.0.1-brightgreen?style=flat-square" alt="Version">
 </p>
 
 <p align="center">
@@ -46,10 +57,10 @@
 
 ### 下载预编译包 / Download Pre-built
 
-前往 [Releases](https://github.com/your-repo/releases) 页面或 `app/` 目录下载最新版本：
+前往 [Releases](https://github.com/thatsbowen/AI-Sales-Lead-Finder/releases) 页面下载最新版本：
 
 ```
-app/AI帮找产品销售线索-Windows-x64.zip
+https://github.com/thatsbowen/AI-Sales-Lead-Finder/releases/download/v1.0.1/AI-Sales-Lead-Finder-Windows-x64.zip
 ```
 
 解压后双击 `AI帮找产品销售线索.exe` 即可运行。
@@ -137,7 +148,7 @@ AI-Sales-Lead-Finder/
 │   ├── qcoder.jpg       # Donation QR code
 │   └── icon.png         # App icon (placeholder)
 ├── app/
-│   └── AI帮找产品销售线索-Windows-x64.zip   # Pre-built binary
+│   └── (预编译包已迁移至 GitHub Releases)
 └── README.md
 ```
 
@@ -203,3 +214,4 @@ MIT © 2026 — Free for personal and commercial use.
   <br>
   <sub>为外贸人而建。如果这个工具帮你找到了一个客户，它已经值回票价。</sub>
 </p>
+*（内容由AI生成，仅供参考）*
